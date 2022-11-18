@@ -3,10 +3,18 @@ module color
 pub type Color = BasicColor | TrueColor
 
 pub fn (c Color) render(msg string) string {
+	if no_color {
+		return msg
+	}
+
 	return c.render(msg)
 }
 
 pub fn (c Color) render_bg(msg string) string {
+	if no_color {
+		return msg
+	}
+
 	return c.render_bg(msg)
 }
 

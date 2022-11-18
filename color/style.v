@@ -16,6 +16,10 @@ enum Style {
 }
 
 pub fn (s Style) render(msg string) string {
+	if no_color {
+		return msg
+	}
+
 	func := match s {
 		.reset { term.reset }
 		.bold { term.bold }
