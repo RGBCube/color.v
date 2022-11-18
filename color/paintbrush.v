@@ -2,8 +2,6 @@ module color
 
 import term
 
-const can_show_color = term.can_show_color_on_stdout()
-
 pub struct PaintBrush {
 pub:
 	fg     ?Color
@@ -11,18 +9,18 @@ pub:
 	styles []Style
 }
 
-pub fn (p &PaintBrush) color(msg string) string {
-	if !color.can_show_color {
+pub fn (p &PaintBrush) render(msg string) string {
+	if no_color {
 		return msg
 	}
 
 	mut result := msg
 
 	if fg := p.fg {
-		result = fg.color(result)
+		result = fg.render(result)
 	}
 	if bg := p.bg {
-		result = bg.color(result)
+		result = bg.render(result)
 	}
 
 	for style in p.styles {
@@ -30,4 +28,12 @@ pub fn (p &PaintBrush) color(msg string) string {
 	}
 
 	return result
+}
+
+pub fn (p &PaintBrush) cprint(msg string) {
+	print(p.render(msg))
+}
+
+pub fn (p &PaintBrush) cprintln(msg string) {
+	println(p.render(msg))
 }

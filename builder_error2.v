@@ -9,5 +9,5 @@ fn main() {
 		styles: [color.bold, color.underline, color.italic]
 	}
 
-	print(p.color('Hello World'))
+	p.cprintln('Hello World')
 }
