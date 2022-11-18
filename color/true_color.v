@@ -37,12 +37,12 @@ pub fn (c TrueColor) cprint(msg string) {
 	print(c.render(msg))
 }
 
-pub fn (c TrueColor) cprintln(msg string) {
-	println(c.render(msg))
-}
-
 pub fn (c TrueColor) cprint_bg(msg string) {
 	print(c.render_bg(msg))
+}
+
+pub fn (c TrueColor) cprintln(msg string) {
+	println(c.render(msg))
 }
 
 pub fn (c TrueColor) cprintln_bg(msg string) {
