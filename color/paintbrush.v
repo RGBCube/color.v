@@ -6,6 +6,8 @@ pub:
 	fg    ?Color
 	bg    ?Color
 	style []Style
+__global:
+	disabled bool
 }
 
 [params]
@@ -13,6 +15,7 @@ pub struct PaintBrushParams {
 	fg    ?Color
 	bg    ?Color
 	style []Style
+	disabled bool
 }
 
 pub fn new_brush(p PaintBrushParams) !PaintBrush {
@@ -34,7 +37,7 @@ pub fn new_brush(p PaintBrushParams) !PaintBrush {
 }
 
 pub fn (p &PaintBrush) render(msg string) string {
-	if no_color {
+	if no_color || p.disabled {
 		return msg
 	}
 
