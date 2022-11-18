@@ -35,8 +35,8 @@ pub fn (s Style) apply(msg string) string {
 		.dim { term.dim }
 		.italic { term.italic }
 		.underline { term.underline }
-		//.slow_blink { term.slow_blink }
-		//.rapid_blink { term.rapid_blink }
+		// .slow_blink { term.slow_blink }
+		// .rapid_blink { term.rapid_blink }
 		.inverse { term.inverse }
 		.hidden { term.hidden }
 		.strikethrough { term.strikethrough }
