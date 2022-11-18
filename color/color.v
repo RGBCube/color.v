@@ -1,6 +1,6 @@
 module color
 
-type Color = BasicColor | TrueColor
+pub type Color = BasicColor | TrueColor
 
 // I have no idea why these are needed
 
