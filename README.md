@@ -20,8 +20,8 @@ color.bold.cprintln('Hello World')
 import color
 
 brush := color.PaintBrush{
-    fg: color.rgb(0, 0, 0)!,
-    bg: color.hex(0xffffff)!,
+    fg: color.rgb(0, 0, 0)!
+    bg: color.hex(0xffffff)!
     styles: [color.bold, color.underline, color.italic]
 }
 
