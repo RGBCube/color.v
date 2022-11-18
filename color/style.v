@@ -8,8 +8,8 @@ pub const (
 	dim           = Style.dim
 	italic        = Style.italic
 	underline     = Style.underline
-	// slow_blink = Style.slow_blink
-	// rapid_blink = Style.rapid_blink
+	slow_blink = Style.slow_blink
+	rapid_blink = Style.rapid_blink
 	inverse       = Style.inverse
 	hidden        = Style.hidden
 	strikethrough = Style.strikethrough
@@ -21,8 +21,8 @@ enum Style {
 	dim
 	italic
 	underline
-	// slow_blink
-	// rapid_blink
+	slow_blink
+	rapid_blink
 	inverse
 	hidden
 	strikethrough
@@ -35,8 +35,8 @@ pub fn (s Style) apply(msg string) string {
 		.dim { term.dim }
 		.italic { term.italic }
 		.underline { term.underline }
-		// .slow_blink { term.slow_blink }
-		// .rapid_blink { term.rapid_blink }
+		.slow_blink { term.slow_blink }
+		.rapid_blink { term.rapid_blink }
 		.inverse { term.inverse }
 		.hidden { term.hidden }
 		.strikethrough { term.strikethrough }
