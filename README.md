@@ -10,6 +10,7 @@ An easier way to print colored text to the terminal.
 import color
 
 color.red.cprintln('Hello World')
+color.cyan.cprintln_bg('Hello World')
 color.bold.cprintln('Hello World')
 ```
 
