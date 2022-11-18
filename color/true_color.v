@@ -25,10 +25,10 @@ pub:
 	b int
 }
 
-pub fn (c TrueColor) apply(msg string) string {
+pub fn (c TrueColor) color(msg string) string {
 	return term.rgb(c.r, c.g, c.b, msg)
 }
 
-pub fn (c TrueColor) apply_bg(msg string) string {
+pub fn (c TrueColor) color_bg(msg string) string {
 	return term.bg_rgb(c.r, c.g, c.b, msg)
 }

@@ -9,8 +9,8 @@ An easier way to print colored text to the terminal
 ```v
 import color
 
-println(color.red.apply('Hello World'))
-println(color.bold.apply('Hello World'))
+println(color.red.color('Hello World'))
+println(color.bold.color('Hello World'))
 ```
 
 ## Advanced
@@ -24,5 +24,5 @@ p := color.PaintBrush{
     styles: [color.bold, color.underline, color.italic]
 }
 
-print(p.apply('Hello World'))
+print(p.color('Hello World'))
 ```

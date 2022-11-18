@@ -28,7 +28,7 @@ enum Style {
 	strikethrough
 }
 
-pub fn (s Style) apply(msg string) string {
+pub fn (s Style) color(msg string) string {
 	func := match s {
 		.reset { term.reset }
 		.bold { term.bold }

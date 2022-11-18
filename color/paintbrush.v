@@ -11,7 +11,7 @@ pub:
 	styles []Style
 }
 
-pub fn (p &PaintBrush) apply(msg string) string {
+pub fn (p &PaintBrush) color(msg string) string {
 	if !color.can_show_color {
 		return msg
 	}
@@ -19,14 +19,14 @@ pub fn (p &PaintBrush) apply(msg string) string {
 	mut result := msg
 
 	if fg := p.fg {
-		result = fg.apply(result)
+		result = fg.color(result)
 	}
 	if bg := p.bg {
-		result = bg.apply(result)
+		result = bg.color(result)
 	}
 
 	for style in p.styles {
-		result = style.apply(result)
+		result = style.color(result)
 	}
 
 	return result
