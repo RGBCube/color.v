@@ -3,11 +3,11 @@ module main
 import color
 
 fn main() {
-	p := color.PaintBrush{
+	p := color.new_brush(
 		fg: color.rgb(0, 0, 0)!
 		bg: color.hex(0xffffff)!
-		styles: [color.bold, color.underline, color.italic]
-	}
+		style: [color.bold, color.underline, color.italic]
+	)!
 
 	p.cprintln('Hello World')
 }

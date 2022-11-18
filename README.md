@@ -19,11 +19,11 @@ color.bold.cprintln('Hello World')
 ```v
 import color
 
-brush := color.PaintBrush{
+brush := color.new_brush(
     fg: color.rgb(0, 0, 0)!
     bg: color.hex(0xffffff)!
-    styles: [color.bold, color.underline, color.italic]
-}
+    style: [color.bold, color.underline, color.italic]
+)!
 
 brush.cprintln('Hello World')
 ```
