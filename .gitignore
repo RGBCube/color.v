@@ -1,6 +1,6 @@
 # Binaries for programs and plugins
 main
-VColor
+color
 *.exe
 *.exe~
 *.so

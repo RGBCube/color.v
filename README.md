@@ -1,6 +1,6 @@
 # v-color
 
-An easier way to print colored text to the terminal
+An easier way to print colored text to the terminal.
 
 # Example
 
@@ -9,8 +9,8 @@ An easier way to print colored text to the terminal
 ```v
 import color
 
-println(color.red.color('Hello World'))
-println(color.bold.color('Hello World'))
+color.red.cprintln('Hello World')
+color.bold.cprintln('Hello World')
 ```
 
 ## Advanced
@@ -18,11 +18,11 @@ println(color.bold.color('Hello World'))
 ```v
 import color
 
-p := color.PaintBrush{
+brush := color.PaintBrush{
     fg: color.rgb(0, 0, 0)!,
     bg: color.hex(0xffffff)!,
     styles: [color.bold, color.underline, color.italic]
 }
 
-print(p.color('Hello World'))
+brush.cprintln('Hello World')
 ```
