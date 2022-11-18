@@ -74,19 +74,3 @@ pub fn (c BasicColor) render_bg(msg string) string {
 
 	return func(msg)
 }
-
-pub fn (c BasicColor) cprint(msg string) {
-	print(c.render(msg))
-}
-
-pub fn (c BasicColor) cprint_bg(msg string) {
-	print(c.render_bg(msg))
-}
-
-pub fn (c BasicColor) cprintln(msg string) {
-	println(c.render(msg))
-}
-
-pub fn (c BasicColor) cprintln_bg(msg string) {
-	println(c.render_bg(msg))
-}

@@ -32,19 +32,3 @@ pub fn (c TrueColor) render(msg string) string {
 pub fn (c TrueColor) render_bg(msg string) string {
 	return term.bg_rgb(c.r, c.g, c.b, msg)
 }
-
-pub fn (c TrueColor) cprint(msg string) {
-	print(c.render(msg))
-}
-
-pub fn (c TrueColor) cprint_bg(msg string) {
-	print(c.render_bg(msg))
-}
-
-pub fn (c TrueColor) cprintln(msg string) {
-	println(c.render(msg))
-}
-
-pub fn (c TrueColor) cprintln_bg(msg string) {
-	println(c.render_bg(msg))
-}

@@ -11,17 +11,17 @@ pub fn (c Color) render_bg(msg string) string {
 }
 
 pub fn (c Color) cprint(msg string) {
-	c.cprint(msg)
+	print(c.render(msg))
 }
 
 pub fn (c Color) cprintln(msg string) {
-	c.cprintln(msg)
+	println(c.render(msg))
 }
 
 pub fn (c Color) cprint_bg(msg string) {
-	c.cprint_bg(msg)
+	print(c.render_bg(msg))
 }
 
 pub fn (c Color) cprintln_bg(msg string) {
-	c.cprintln_bg(msg)
+	println(c.render_bg(msg))
 }
