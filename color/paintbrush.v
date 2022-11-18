@@ -1,7 +1,5 @@
 module color
 
-import term
-
 pub struct PaintBrush {
 pub:
 	fg     ?Color
@@ -24,7 +22,7 @@ pub fn (p &PaintBrush) render(msg string) string {
 	}
 
 	for style in p.styles {
-		result = style.color(result)
+		result = style.render(result)
 	}
 
 	return result
