@@ -8,8 +8,8 @@ pub const (
 	dim           = Style.dim
 	italic        = Style.italic
 	underline     = Style.underline
-	slow_blink = Style.slow_blink
-	rapid_blink = Style.rapid_blink
+	slow_blink    = Style.slow_blink
+	rapid_blink   = Style.rapid_blink
 	inverse       = Style.inverse
 	hidden        = Style.hidden
 	strikethrough = Style.strikethrough

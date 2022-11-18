@@ -18,20 +18,11 @@ pub fn (p &PaintBrush) apply(msg string) string {
 
 	mut result := msg
 
-	// IS NOT IMPLEMENTED YET !!!
-	// if fg := p.fg {
-	// 	result = fg.apply(result)
-	// }
-	// if bg := p.bg {
-	// 	result = bg.apply(result)
-	// }
-	fg := p.fg or { unsafe { nil } }
-	if !isnil(fg) {
+	if fg := p.fg {
 		result = fg.apply(result)
 	}
-	bg := p.bg or { unsafe { nil } }
-	if !isnil(fg) {
-		result = bg.apply_bg(result)
+	if bg := p.bg {
+		result = bg.apply(result)
 	}
 
 	for style in p.styles {
