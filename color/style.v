@@ -15,7 +15,7 @@ enum Style {
 	strikethrough
 }
 
-pub fn (s Style) color(msg string) string {
+pub fn (s Style) render(msg string) string {
 	func := match s {
 		.reset { term.reset }
 		.bold { term.bold }
@@ -29,4 +29,12 @@ pub fn (s Style) color(msg string) string {
 		.strikethrough { term.strikethrough }
 	}
 	return func(msg)
+}
+
+pub fn (s Style) cprint(msg string) {
+	print(s.render(msg))
+}
+
+pub fn (s Style) cprintln(msg string) {
+	println(s.render(msg))
 }
