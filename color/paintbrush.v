@@ -20,7 +20,6 @@ pub fn (p &PaintBrush) render(msg string) string {
 	if bg := p.bg {
 		result = bg.render(result)
 	}
-
 	for style in p.styles {
 		result = style.render(result)
 	}

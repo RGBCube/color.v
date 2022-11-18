@@ -28,6 +28,7 @@ pub fn (s Style) render(msg string) string {
 		.hidden { term.hidden }
 		.strikethrough { term.strikethrough }
 	}
+
 	return func(msg)
 }
 
