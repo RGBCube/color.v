@@ -1,6 +1,6 @@
 # v-color
 
-An easier way to print color to the terminal
+An easier way to print colored text to the terminal
 
 # Example
 
