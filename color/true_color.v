@@ -3,7 +3,6 @@ module color
 import term
 
 struct TrueColor {
-pub:
 	r int
 	g int
 	b int
