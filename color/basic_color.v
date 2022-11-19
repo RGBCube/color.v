@@ -21,7 +21,7 @@ enum BasicColor {
 	bright_white
 }
 
-pub fn (c BasicColor) render(msg string) string {
+fn (c BasicColor) render(msg string) string {
 	func := match c {
 		.black { term.black }
 		.red { term.red }
@@ -44,7 +44,7 @@ pub fn (c BasicColor) render(msg string) string {
 	return func(msg)
 }
 
-pub fn (c BasicColor) render_bg(msg string) string {
+fn (c BasicColor) render_bg(msg string) string {
 	func := match c {
 		.black { term.bg_black }
 		.red { term.bg_red }
