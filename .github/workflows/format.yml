@@ -1,0 +1,30 @@
+
+name: Format Code
+
+on: 
+  - pull_request
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up V
+        uses: vlang/setup-v@v1.1
+        with:
+          check-latest: true
+
+      - name: Format Code
+        run: v fmt -w .
+
+      - name: Push To GitHub
+        continue-on-error: true
+        run: |
+          git pull
+          git add ./
+          git commit --amend
+          git push
