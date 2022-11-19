@@ -3,6 +3,7 @@ module color
 import term
 
 pub const (
+	// Colors
 	black          = Color(BasicColor.black)
 	red            = Color(BasicColor.red)
 	green          = Color(BasicColor.green)
@@ -19,9 +20,7 @@ pub const (
 	bright_magenta = Color(BasicColor.bright_magenta)
 	bright_cyan    = Color(BasicColor.bright_cyan)
 	bright_white   = Color(BasicColor.bright_white)
-)
-
-pub const (
+	// Styles
 	reset         = Style.reset
 	bold          = Style.bold
 	dim           = Style.dim
