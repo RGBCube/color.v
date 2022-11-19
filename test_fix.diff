@@ -1,0 +1,12 @@
+18227c18227
+<       term__black _t1 = 0;
+---
+>       string (*_t1) (string) = 0;
+18300c18300
+<       term__bg_black _t1 = 0;
+---
+>       string (*_t1) (string) = 0;
+18454c18454
+<       term__reset _t2 = 0;
+---
+>       string (*_t2) (string) = 0;
