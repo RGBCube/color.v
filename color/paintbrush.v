@@ -1,7 +1,7 @@
 module color
 
 [noinit]
-pub struct PaintBrush {
+pub struct Brush {
 pub:
 	fg    ?Color
 	bg    ?Color
@@ -11,14 +11,14 @@ __global:
 }
 
 [params]
-pub struct PaintBrushParams {
+pub struct BrushParams {
 	fg    ?Color
 	bg    ?Color
 	style []Style
 	disabled bool
 }
 
-pub fn new_brush(p PaintBrushParams) !PaintBrush {
+pub fn new_brush(p BrushParams) !Brush {
 	mut count := map[Style]int{}
 
 	for style in p.style {
@@ -29,14 +29,14 @@ pub fn new_brush(p PaintBrushParams) !PaintBrush {
 		}
 	}
 
-	return PaintBrush{
+	return Brush{
 		fg: p.fg
 		bg: p.bg
 		style: p.style
 	}
 }
 
-pub fn (p &PaintBrush) render(msg string) string {
+pub fn (p &Brush) render(msg string) string {
 	if no_color || p.disabled {
 		return msg
 	}
@@ -56,10 +56,10 @@ pub fn (p &PaintBrush) render(msg string) string {
 	return result
 }
 
-pub fn (p &PaintBrush) cprint(msg string) {
+pub fn (p &Brush) cprint(msg string) {
 	print(p.render(msg))
 }
 
-pub fn (p &PaintBrush) cprintln(msg string) {
+pub fn (p &Brush) cprintln(msg string) {
 	println(p.render(msg))
 }
