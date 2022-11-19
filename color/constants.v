@@ -21,16 +21,16 @@ pub const (
 	bright_cyan    = Color(BasicColor.bright_cyan)
 	bright_white   = Color(BasicColor.bright_white)
 	// Styles
-	reset         = Style.reset
-	bold          = Style.bold
-	dim           = Style.dim
-	italic        = Style.italic
-	underline     = Style.underline
-	slow_blink    = Style.slow_blink
-	rapid_blink   = Style.rapid_blink
-	inverse       = Style.inverse
-	hidden        = Style.hidden
-	strikethrough = Style.strikethrough
+	reset          = Style.reset
+	bold           = Style.bold
+	dim            = Style.dim
+	italic         = Style.italic
+	underline      = Style.underline
+	slow_blink     = Style.slow_blink
+	rapid_blink    = Style.rapid_blink
+	inverse        = Style.inverse
+	hidden         = Style.hidden
+	strikethrough  = Style.strikethrough
 )
 
 const no_color = !term.can_show_color_on_stdout()

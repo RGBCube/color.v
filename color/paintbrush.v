@@ -12,9 +12,9 @@ __global:
 
 [params]
 pub struct BrushParams {
-	fg    ?Color
-	bg    ?Color
-	style []Style
+	fg       ?Color
+	bg       ?Color
+	style    []Style
 	disabled bool
 }
 
