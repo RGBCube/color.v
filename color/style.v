@@ -23,12 +23,12 @@ enum StyleImpl {
 	bold
 	dim
 	italic
-	underline
-	slow_blink
-	rapid_blink
-	inverse
-	hidden
-	strikethrough
+	// underline
+	// slow_blink
+	// rapid_blink
+	// inverse
+	// hidden
+	// strikethrough
 }
 
 fn (s StyleImpl) render(msg string) string {
@@ -40,12 +40,12 @@ fn (s StyleImpl) render(msg string) string {
 			.bold { term.bold }
 			.dim { term.dim }
 			.italic { term.italic }
-			.underline { term.underline }
-			.slow_blink { term.slow_blink }
-			.rapid_blink { term.rapid_blink }
-			.inverse { term.inverse }
-			.hidden { term.hidden }
-			.strikethrough { term.strikethrough }
+			//.underline { term.underline }
+			//.slow_blink { term.slow_blink }
+			//.rapid_blink { term.rapid_blink }
+			//.inverse { term.inverse }
+			//.hidden { term.hidden }
+			//.strikethrough { term.strikethrough }
 		}
 
 		func(msg)
