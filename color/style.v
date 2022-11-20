@@ -31,7 +31,7 @@ enum StyleImpl {
 	strikethrough
 }
 
-pub fn (s StyleImpl) render(msg string) string {
+fn (s StyleImpl) render(msg string) string {
 	return if no_color {
 		msg
 	} else {
