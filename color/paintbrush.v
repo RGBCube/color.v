@@ -37,23 +37,23 @@ pub fn new_brush(p BrushParams) !Brush {
 }
 
 pub fn (p &Brush) render(msg string) string {
-	if no_color || p.disabled {
-		return msg
-	}
+	return if no_color || p.disabled {
+		msg
+	} else {
+		mut result := msg
 
-	mut result := msg
+		if fg := p.fg {
+			result = fg.render(result)
+		}
+		if bg := p.bg {
+			result = bg.render(result)
+		}
+		for style in p.style {
+			result = style.render(result)
+		}
 
-	if fg := p.fg {
-		result = fg.render(result)
+		result
 	}
-	if bg := p.bg {
-		result = bg.render(result)
-	}
-	for style in p.style {
-		result = style.render(result)
-	}
-
-	return result
 }
 
 pub fn (p &Brush) cprint(msg string) {
