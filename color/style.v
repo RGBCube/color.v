@@ -2,7 +2,7 @@ module color
 
 import term
 
-enum Style {
+enum BasicStyle {
 	reset
 	bold
 	dim
@@ -15,7 +15,7 @@ enum Style {
 	strikethrough
 }
 
-pub fn (s Style) render(msg string) string {
+pub fn (s BasicStyle) render(msg string) string {
 	return if no_color {
 		msg
 	} else {

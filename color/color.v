@@ -1,19 +1,19 @@
 module color
 
-pub interface Renderable {
+pub interface Style {
 	render(string) string
 }
 
-pub fn (r Renderable) cprint(msg string) {
-	print(r.render(msg))
+pub fn (s Style) cprint(msg string) {
+	print(s.render(msg))
 }
 
-pub fn (r Renderable) cprintln(msg string) {
-	println(r.render(msg))
+pub fn (s Style) cprintln(msg string) {
+	println(s.render(msg))
 }
 
 pub interface Color {
-	Renderable
+	Style
 	render_bg(string) string
 }
 
