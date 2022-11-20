@@ -21,9 +21,9 @@ struct TrueColor {
 }
 
 fn (c TrueColor) render(msg string) string {
-	return term.rgb(c.r, c.g, c.b, msg)
+	return term.rgb(int(c.r), int(c.g), int(c.b), msg)
 }
 
 fn (c TrueColor) render_bg(msg string) string {
-	return term.bg_rgb(c.r, c.g, c.b, msg)
+	return term.bg_rgb(int(c.r), int(c.g), int(c.b), msg)
 }
