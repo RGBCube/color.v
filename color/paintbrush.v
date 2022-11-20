@@ -1,65 +1,63 @@
 module color
 
-[noinit]
-pub struct Brush {
-pub:
-	fg    ?Color
-	bg    ?Color
-	style []Style
-__global:
-	disabled bool
+// Interface
+
+pub interface Brush {
+	Style
+	set_disabled(bool)
 }
 
 [params]
-pub struct BrushParams {
-	fg       ?Color
-	bg       ?Color
-	style    []Style
-	disabled bool
+pub interface BrushParams {
+	fg ?Color
+	bg ?Color
 }
 
-pub fn new_brush(p BrushParams) !Brush {
-	mut count := map[Style]int{}
+pub fn new_brush(styles ...Style, p BrushParams) !Brush {
+	mut style_counter := map[Style]int{}
 
-	for style in p.style {
-		count[style]++
+	for style in styles {
+		if style is Color {
+			return error('A Color was given instead of a Style')
+		}
+		// Style is definitely not a Color
+		style_counter[style]++
 
-		if count[style] > 1 {
+		if style_counter[style] > 1 {
 			return error('Multiple of the same style was provided')
 		}
 	}
 
-	return Brush{
-		fg: p.fg
-		bg: p.bg
-		style: p.style
-	}
+	return BrushImpl{styles + p.fg, bg}
 }
 
-pub fn (p &Brush) render(msg string) string {
+// Declaration
+
+struct BrushImpl {
+	// The foreground is in styles because it fits that interface
+	styles []Style
+	bg     ?Color
+mut:
+	disabled bool
+}
+
+pub fn (p &BrushImpl) render(msg string) string {
 	return if no_color || p.disabled {
 		msg
 	} else {
 		mut result := msg
 
-		if fg := p.fg {
-			result = fg.render(result)
+		for style in p.styles {
+			result = style.render(result)
 		}
 		if bg := p.bg {
-			result = bg.render(result)
-		}
-		for style in p.style {
-			result = style.render(result)
+			result = bg.render_bg(result)
 		}
 
 		result
 	}
 }
 
-pub fn (p &Brush) cprint(msg string) {
-	print(p.render(msg))
-}
-
-pub fn (p &Brush) cprintln(msg string) {
-	println(p.render(msg))
+pub fn (mut p &BrushImpl) set_disabled(value bool) {
+	p.disabled = value
 }
