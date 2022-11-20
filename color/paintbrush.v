@@ -41,7 +41,7 @@ mut:
 	disabled bool
 }
 
-pub fn (p &BrushImpl) render(msg string) string {
+fn (p &BrushImpl) render(msg string) string {
 	return if no_color || p.disabled {
 		msg
 	} else {
@@ -58,6 +58,6 @@ pub fn (p &BrushImpl) render(msg string) string {
 	}
 }
 
-pub fn (mut p &BrushImpl) set_disabled(value bool) {
+fn (mut p &BrushImpl) set_disabled(value bool) {
 	p.disabled = value
 }
