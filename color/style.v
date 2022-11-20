@@ -18,7 +18,7 @@ pub fn (s Style) cprintln(msg string) {
 
 // Implementation
 
-enum BasicStyle {
+enum StyleImpl {
 	reset
 	bold
 	dim
@@ -31,7 +31,7 @@ enum BasicStyle {
 	strikethrough
 }
 
-pub fn (s BasicStyle) render(msg string) string {
+pub fn (s StyleImpl) render(msg string) string {
 	return if no_color {
 		msg
 	} else {
