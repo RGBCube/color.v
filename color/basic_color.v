@@ -22,6 +22,10 @@ enum BasicColor {
 }
 
 fn (c BasicColor) render(msg string) string {
+	if no_color {
+		return msg
+	}
+
 	func := match c {
 		.black { term.black }
 		.red { term.red }
@@ -45,6 +49,10 @@ fn (c BasicColor) render(msg string) string {
 }
 
 fn (c BasicColor) render_bg(msg string) string {
+	if no_color {
+		return msg
+	}
+
 	func := match c {
 		.black { term.bg_black }
 		.red { term.bg_red }

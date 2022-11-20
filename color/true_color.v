@@ -21,9 +21,17 @@ struct TrueColor {
 }
 
 fn (c TrueColor) render(msg string) string {
+	if no_color {
+		return msg
+	}
+
 	return term.rgb(c.r, c.g, c.b, msg)
 }
 
 fn (c TrueColor) render_bg(msg string) string {
+	if no_color {
+		return msg
+	}
+
 	return term.bg_rgb(c.r, c.g, c.b, msg)
 }

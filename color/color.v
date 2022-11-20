@@ -1,29 +1,20 @@
 module color
 
-pub type Color = BasicColor | TrueColor
-
-pub fn (c Color) render(msg string) string {
-	if no_color {
-		return msg
-	}
-
-	return c.render(msg)
+pub interface Renderable {
+	render(string) string
 }
 
-pub fn (c Color) render_bg(msg string) string {
-	if no_color {
-		return msg
-	}
-
-	return c.render_bg(msg)
+pub fn (r Renderable) cprint(msg string) {
+	print(r.render(msg))
 }
 
-pub fn (c Color) cprint(msg string) {
-	print(c.render(msg))
+pub fn (r Renderable) cprintln(msg string) {
+	println(r.render(msg))
 }
 
-pub fn (c Color) cprintln(msg string) {
-	println(c.render(msg))
+pub interface Color {
+	Renderable
+	render_bg(string) string
 }
 
 pub fn (c Color) cprint_bg(msg string) {

@@ -35,11 +35,3 @@ pub fn (s Style) render(msg string) string {
 
 	return func(msg)
 }
-
-pub fn (s Style) cprint(msg string) {
-	print(s.render(msg))
-}
-
-pub fn (s Style) cprintln(msg string) {
-	println(s.render(msg))
-}
