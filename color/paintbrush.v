@@ -9,23 +9,23 @@ mut:
 }
 
 [params]
-pub interface BrushParams {
-	fg ?Color
-	bg ?Color
+pub struct BrushParams {
+	fg     ?Color
+	bg     ?Color
 	styles []Style
 }
 
 pub fn new_brush(p BrushParams) !Brush {
-	mut style_counter := map[Style]int{}
+	mut style_counter := map[int]int{}
 
 	for style in p.styles {
 		if style is Color {
 			return error('A Color was given instead of a Style')
 		}
 		// Style is definitely not a Color
-		style_counter[style]++
+		style_counter[typeof(style).idx]++
 
-		if style_counter[style] > 1 {
+		if style_counter[typeof(style).idx] > 1 {
 			return error('Multiple of the same style was provided')
 		}
 	}
