@@ -8,6 +8,8 @@ mut:
 	set_disabled(bool)
 }
 
+// Initialization
+
 [params]
 pub struct BrushParams {
 	fg     ?Color
