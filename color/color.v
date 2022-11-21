@@ -9,11 +9,11 @@ pub interface Color {
 	render_bg(string) string
 }
 
-pub fn (c Color) cprint_bg(msg string) {
+pub fn (c Color) print_bg(msg string) {
 	print(c.render_bg(msg))
 }
 
-pub fn (c Color) cprintln_bg(msg string) {
+pub fn (c Color) println_bg(msg string) {
 	println(c.render_bg(msg))
 }
 

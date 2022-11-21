@@ -9,9 +9,9 @@ An easier way to print colored text to the terminal.
 ```v
 import color
 
-color.red.cprintln('Hello World')
-color.cyan.cprintln_bg('Hello World')
-color.bold.cprintln('Hello World')
+color.red.println('Hello World')
+color.cyan.println_bg('Hello World')
+color.bold.println('Hello World')
 ```
 
 ## Advanced
@@ -25,5 +25,5 @@ brush := color.new_brush(
     style: [color.bold, color.underline, color.italic]
 )!
 
-brush.cprintln('Hello World')
+brush.println('Hello World')
 ```

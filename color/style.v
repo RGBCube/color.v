@@ -8,11 +8,11 @@ pub interface Style {
 	render(string) string
 }
 
-pub fn (s Style) cprint(msg string) {
+pub fn (s Style) print(msg string) {
 	print(s.render(msg))
 }
 
-pub fn (s Style) cprintln(msg string) {
+pub fn (s Style) println(msg string) {
 	println(s.render(msg))
 }
 
