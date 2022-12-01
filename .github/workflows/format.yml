@@ -1,22 +1,20 @@
-
 name: Format Code
 
-on: 
+on:
   - pull_request
   - push
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
       - name: Set Up V
         uses: vlang/setup-v@v1.1
         with:
           check-latest: true
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
       - name: Format Code
         run: v fmt -w .
