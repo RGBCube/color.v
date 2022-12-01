@@ -1,15 +1,11 @@
 module color
 
-// Interface
-
 // Brush is the complex Style type that can hold multiple colors and styles.
 pub interface Brush {
-	Style
-mut:
-	set_disabled(bool)
+	Style // Inherits Style methods.
+	mut:
+	set_disabled(bool) // Enable/disable the brush. When disabled, the brush doesn't render anything and returns the given string.
 }
-
-// Initialization
 
 [params]
 pub struct BrushParams {
@@ -20,7 +16,8 @@ pub struct BrushParams {
 }
 
 // new_brush creates a new Brush with the given parameters.
-pub fn new_brush(p BrushParams) !Brush {
+
+pub fn new_brush(p BrushParams) Brush {
 	return BrushImpl{
 		fg: p.fg
 		bg: p.bg
@@ -29,21 +26,28 @@ pub fn new_brush(p BrushParams) !Brush {
 	}
 }
 
+// new_brush_pointers creates a new Brush pointer with the given parameters.
+// This is useful for long-lived brush instances.
+
+pub fn new_brush_pointer(p BrushParams) &Brush {
+	return &new_brush(p)
+}
+
 // Declaration
 
 struct BrushImpl {
 	fg     ?Color
 	bg     ?Color
 	styles []Style
-mut:
+	mut:
 	disabled bool
 }
 
-fn (p &BrushImpl) render(msg string) string {
+fn (p BrushImpl) render(str string) string {
 	return if no_color || p.disabled {
-		msg
+		str
 	} else {
-		mut result := msg
+		mut result := str
 
 		if fg := p.fg {
 			result = fg.render(result)

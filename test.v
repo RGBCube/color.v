@@ -11,7 +11,7 @@ fn main() {
 		fg: color.rgb(0, 0, 0)
 		bg: color.hex(0xffffff)
 		styles: [color.bold, color.dim, color.italic]
-	)!
+	)
 
 	brush.println('Hello World')
 }
