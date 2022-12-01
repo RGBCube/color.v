@@ -2,6 +2,7 @@ module color
 
 // Interface
 
+// Brush is the complex Style type that can hold multiple colors and styles.
 pub interface Brush {
 	Style
 mut:
@@ -12,16 +13,19 @@ mut:
 
 [params]
 pub struct BrushParams {
-	fg     ?Color
-	bg     ?Color
-	styles []Style
+	fg       ?Color
+	bg       ?Color
+	styles   []Style
+	disabled bool
 }
 
+// new_brush creates a new Brush with the given parameters.
 pub fn new_brush(p BrushParams) !Brush {
 	return BrushImpl{
 		fg: p.fg
 		bg: p.bg
 		styles: p.styles
+		disabled: disabled
 	}
 }
 

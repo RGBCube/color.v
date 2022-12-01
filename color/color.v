@@ -4,15 +4,18 @@ import term
 
 // Interface
 
+// Color is a Style extension that also supports rendering in the background.
 pub interface Color {
 	Style
 	render_bg(string) string
 }
 
+// print_bg prints the given string with the color in the background.
 pub fn (c Color) print_bg(msg string) {
 	print(c.render_bg(msg))
 }
 
+// println_bg prints the given string with the color in the background with an added newline.
 pub fn (c Color) println_bg(msg string) {
 	println(c.render_bg(msg))
 }

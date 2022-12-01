@@ -4,14 +4,17 @@ import term
 
 // Interface
 
+// Style is an interface for a style.
 pub interface Style {
 	render(string) string
 }
 
+// print prints the given string with the given style.
 pub fn (s Style) print(msg string) {
 	print(s.render(msg))
 }
 
+// println prints the given string with the given style with an added newline.
 pub fn (s Style) println(msg string) {
 	println(s.render(msg))
 }
