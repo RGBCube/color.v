@@ -1,0 +1,42 @@
+name: Deploy Docs
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Up V
+        uses: vlang/setup-v@v1.1
+        with:
+          check-latest: true
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Checkout Site Repository
+        uses: actions/checkout@v3
+        with:
+          repository: RGBCube/rgbcube.github.io
+          path: site
+
+      - name: Generate Docs
+        run: |
+          cp ./README.md ./src/ # For the README to be included in the docs.
+          v doc -readme -f html -o ./ -m ./src
+
+          rm -rf ./site/docs/color || true
+          mkdir -p ./site/docs/color
+          cp -r ./_docs/* ./site/docs/color/
+
+      - name: Push Docs To GitHub
+        continue-on-error: true
+        run: |
+          cd site
+
+          git config user.name "GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add .
+          git commit -m "Deploy color.v docs"
+          git push https://RGBCube:${{ secrets.GH_TOKEN }}@github.com/RGBCube/rgbcube.github.io master
