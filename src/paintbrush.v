@@ -3,7 +3,7 @@ module color
 // Brush is the complex Style type that can hold multiple colors and styles.
 pub interface Brush {
 	Style // Inherits Style methods.
-	mut:
+mut:
 	set_disabled(bool) // Enable/disable the brush. When disabled, the brush doesn't render anything and returns the given string.
 }
 

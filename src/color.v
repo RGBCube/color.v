@@ -2,7 +2,6 @@ module color
 
 import term
 
-
 // Color is a Style extension that also supports rendering in the background.
 // Every Color is a Style, but not every Style is a Color.
 pub interface Color {

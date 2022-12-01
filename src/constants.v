@@ -2,7 +2,7 @@ module color
 
 import term
 
-pub const (
+	pub const (
 	// Colors
 	black = Color(BasicColor.black)
 	red = Color(BasicColor.red)
