@@ -29,6 +29,11 @@ jobs:
           mkdir -p ./site/docs/color
           cp -r ./_docs/* ./site/docs/color/
 
+      - name: Add Private Key To SSH Agent
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.RGBCUBE_GITHUB_IO_PRIVATE_KEY }}
+
       - name: Push Docs To GitHub
         continue-on-error: true
         run: |
@@ -39,4 +44,4 @@ jobs:
 
           git add .
           git commit -m "Deploy color.v docs"
-          git push https://RGBCube:${{ secrets.GH_TOKEN }}@github.com/RGBCube/rgbcube.github.io master
+          git push git@github.com:RGBCube/rgbcube.github.io master
