@@ -39,7 +39,7 @@ struct BrushImpl {
 	fg     ?Color
 	bg     ?Color
 	styles []Style
-	mut:
+mut:
 	disabled bool
 }
 

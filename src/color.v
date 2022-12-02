@@ -57,20 +57,20 @@ fn (c TrueColor) render_bg(str string) string {
 
 enum BasicColor {
 	black
-	red
-	green
-	yellow
-	blue
-	magenta
-	cyan
-	white
 	bright_black
+	red
 	bright_red
+	green
 	bright_green
+	yellow
 	bright_yellow
+	blue
 	bright_blue
+	magenta
 	bright_magenta
+	cyan
 	bright_cyan
+	white
 	bright_white
 }
 
