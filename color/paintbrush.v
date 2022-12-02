@@ -22,7 +22,7 @@ pub fn new_brush(p BrushParams) Brush {
 		fg: p.fg
 		bg: p.bg
 		styles: p.styles
-		disabled: disabled
+		disabled: p.disabled
 	}
 }
 
