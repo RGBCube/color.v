@@ -1,6 +1,12 @@
+<div align="center">
+
 # color.v
 
+[Docs](https://rgbcube.github.io/docs/color)
+
 A V library to aid in printing colored text to the terminal.
+
+</div>
 
 ## Installation
 
@@ -24,7 +30,7 @@ Here are some examples to get you started:
 
 ### Basic
 
-```v
+```v oksyntax
 import rgbcube.color
 
 color.red.println('Hello World')
@@ -34,7 +40,7 @@ color.bold.println('Hello World')
 
 ### Advanced
 
-```v
+```v oksyntax
 import rgbcube.color
 
 brush := color.new_brush(
