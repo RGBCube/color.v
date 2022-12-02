@@ -1,10 +1,10 @@
 <div align="center">
 
-# color.v
+<h1>color.v</h1>
 
 [Docs](https://rgbcube.github.io/docs/color)
 
-A V library to aid in printing colored text to the terminal.
+<big>A V library to aid in printing colored text to the terminal.</big>
 
 </div>
 
