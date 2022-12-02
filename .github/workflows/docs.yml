@@ -22,8 +22,8 @@ jobs:
 
       - name: Generate Docs
         run: |
-          cp ./README.md ./src/ # For the README to be included in the docs.
-          v doc -readme -f html -o ./ -m ./src
+          cp ./README.md ./color/ # For the README to be included in the docs.
+          v doc -readme -f html -o ./ -m ./color
 
           rm -rf ./site/docs/color || true
           mkdir -p ./site/docs/color
