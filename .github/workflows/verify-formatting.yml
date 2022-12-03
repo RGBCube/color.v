@@ -1,4 +1,4 @@
-name: Format Code
+name: Verify Formatting
 
 on:
   - pull_request
@@ -16,13 +16,5 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Format Code
-        run: v fmt -w ./
-
-      - name: Push To GitHub
-        continue-on-error: true
-        run: |
-          git pull
-          git add ./
-          git commit --amend
-          git push
+      - name: Verify That The Code Is Formatted
+        run: v fmt -verify .
