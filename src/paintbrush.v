@@ -30,7 +30,9 @@ pub fn new_brush(p BrushParams) Brush {
 // This is useful for long-lived brush instances.
 
 pub fn new_brush_pointer(p BrushParams) &Brush {
-	return &new_brush(p)
+	return &BrushImpl{
+		...new_brush(p)
+	}
 }
 
 // Declaration
