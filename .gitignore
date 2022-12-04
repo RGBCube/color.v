@@ -1,10 +1,10 @@
 main
-bin/
 *.exe
 *.exe~
 *.so
 *.dylib
 *.dll
+bin/
 .DS_Store
 .idea/
 .vscode/
