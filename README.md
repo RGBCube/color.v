@@ -4,7 +4,7 @@
 
 [Docs](https://rgbcube.github.io/docs/color)
 
-<big>A V library to aid in printing colored text to the terminal.</big>
+A V library to aid in printing colored text to the terminal.
 
 </div>
 
