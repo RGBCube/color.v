@@ -5,7 +5,7 @@ on:
   - push
 
 jobs:
-  build:
+  verify-formatting:
     runs-on: ubuntu-latest
     steps:
       - name: Set Up V

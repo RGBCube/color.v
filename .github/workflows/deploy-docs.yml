@@ -3,7 +3,7 @@ name: Deploy Docs
 on: push
 
 jobs:
-  build:
+  deploy-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Set Up V
