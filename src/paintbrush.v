@@ -31,7 +31,10 @@ pub fn new_brush(p BrushParams) Brush {
 
 pub fn new_brush_pointer(p BrushParams) &Brush {
 	return &BrushImpl{
-		...new_brush(p)
+		fg: p.fg
+		bg: p.bg
+		styles: p.styles
+		disabled: p.disabled
 	}
 }
 
