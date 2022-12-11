@@ -48,7 +48,7 @@ mut:
 	disabled bool
 }
 
-fn (p BrushImpl) render(str string) string {
+fn (p &BrushImpl) render(str string) string {
 	return if no_color || p.disabled {
 		str
 	} else {
