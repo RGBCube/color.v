@@ -56,7 +56,7 @@ fn (c TrueColor) render_bg(str string) string {
 }
 
 struct BasicColor {
-	pub:
+pub:
 	render    fn (string) string
 	render_bg fn (string) string
 }
