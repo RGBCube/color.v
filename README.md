@@ -30,7 +30,7 @@ Here are some examples to get you started:
 
 ### Basic
 
-```v oksyntax
+```v,oksyntax
 import rgbcube.color
 
 color.red.println('Hello, World!')
@@ -40,7 +40,7 @@ color.bold.println('Hello, World!')
 
 ### Advanced
 
-```v oksyntax
+```v,oksyntax
 import rgbcube.color
 
 brush := color.new_brush(
