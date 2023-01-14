@@ -33,9 +33,9 @@ Here are some examples to get you started:
 ```v oksyntax
 import rgbcube.color
 
-color.red.println('Hello World')
-color.cyan.println_bg('Hello World')
-color.bold.println('Hello World')
+color.red.println('Hello, World!')
+color.cyan.println_bg('Hello, World!')
+color.bold.println('Hello, World!')
 ```
 
 ### Advanced
@@ -49,7 +49,7 @@ brush := color.new_brush(
     styles: [color.bold, color.underline, color.italic]
 )
 
-brush.println('Hello World')
+brush.println('Hello, World!')
 ```
 
 ## License
