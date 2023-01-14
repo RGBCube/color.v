@@ -2,6 +2,9 @@ name: Deploy Docs
 
 on: push
 
+env:
+  project-name: color
+
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
@@ -22,13 +25,13 @@ jobs:
 
       - name: Generate Docs
         run: |
-          mv ./src ./color.v # For the docs header
-          cp ./README.md ./color.v/ # For the README to be included in the docs.
-          v doc -readme -f html -o ./ -m ./color.v
+          mv ./src ./${{ env.project-name }}.v # For the docs header
+          cp ./README.md ./${{ env.project-name }}.v/ # For the README to be included in the docs.
+          v doc -readme -f html -o ./ -m ./${{ env.project-name }}.v
 
-          rm -rf ./site/docs/color || true
-          mkdir -p ./site/docs/color
-          cp -r ./_docs/* ./site/docs/color/
+          rm -rf ./site/docs/${{ env.project-name }} || true
+          mkdir -p ./site/docs/${{ env.project-name }}
+          cp -r ./_docs/* ./site/docs/${{ env.project-name }}/
 
       - name: Add Private Key To SSH Agent
         uses: webfactory/ssh-agent@v0.7.0
@@ -44,5 +47,5 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
 
           git add ./
-          git commit -m "Deploy color.v docs"
+          git commit -m "Deploy ${{ env.project-name }}.v docs"
           git push git@github.com:RGBCube/rgbcube.github.io master
